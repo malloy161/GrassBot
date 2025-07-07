@@ -23,7 +23,7 @@ TELEGRAM_BOT_TOKEN=ваш_токен_бота
 python main.py
 
 ## Команды бота
-- «/start» - главное меню
+- /start - главное меню
 - «Душевые/Зеркала/Другая работа» - добавление работ
 - «Выгрузить отчет» - получение Excel-отчета
 - «Удалить последнюю» - удаление последней записи
@@ -39,3 +39,54 @@ python main.py
 └── .env            # Переменные окружения
 
 > Бот поддерживает многопоточность, автоматические бэкапы и обработку ошибок с уведомлением администратора.
+
+
+
+# Grass Bot - English Version
+
+A Telegram bot for tracking completed work activities with reporting and reminder features.
+
+## Core Features
+- 📝 «Work logging»: Shower cabins, mirrors, and other custom work
+- 📊 «Reporting»: Automatic Excel report generation
+- 🔔 «Reminders»: Daily notifications to log activities
+- ⚙️ «Customization»: Work day schedules, vacation mode
+- 📋 «Management»: View, edit, and delete entries
+
+## Quick Setup
+1. Install dependencies:
+
+pip install python-telegram-bot pytz openpyxl python-dotenv
+
+2. Create «.env» file:
+
+TELEGRAM_BOT_TOKEN=your_bot_token_here
+
+3. Start the bot:
+
+python main.py
+
+## Bot Commands
+- /start - Main menu
+- «Showers/Mirrors/Other work» - Add work entries
+- «Generate report» - Get Excel report
+- «Delete last» - Remove last entry
+- «Statistics» - View work statistics
+- «Settings» - Configure bot preferences
+
+## Project Structure
+├── main.py         # Bot startup and core processes
+├── handlers.py     # Message and command processors
+├── database.py     # SQLite database operations
+├── keyboards.py    # Interactive keyboards
+├── config.py       # Configuration settings
+└── .env            # Environment variables
+
+## Technical Highlights
+- «Multithreading»: Safe database operations and background tasks
+- «Automatic backups»: Daily data backups
+- «Error handling»: Comprehensive logging and admin notifications
+- «Caching»: Optimized performance for frequent operations
+- «Timezone support»: Moscow time (configurable)
+
+Start using the bot by sending «/start» in Telegram after launching the application.
