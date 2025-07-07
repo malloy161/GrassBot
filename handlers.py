@@ -3,7 +3,7 @@ import os
 import openpyxl
 import re
 import calendar
-import datetime as dt  # Импортируем модуль datetime под псевдонимом dt
+import datetime as dt 
 from openpyxl.styles import Font, Alignment
 from openpyxl.utils import get_column_letter
 from collections import defaultdict
@@ -236,13 +236,12 @@ async def handle_work(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int
 
         elif category == "mirror":
             logger.info(f"USER {user_id}: Выбрана работа с зеркалом: '{text}'")
-            # ИСПРАВЛЕННАЯ ЛОГИКА ДЛЯ КНОПКИ "НАВЕС"
             if text.lower() == "навес":
                 work_name = "Зеркало навес"
             elif text in ["Обычное с подсветкой", "Большое с подсветкой", "В сборной раме"]:
                 work_name = f"Зеркало {text}"
             else:
-                work_name = f"Зеркало {text}"  # Добавляем "Зеркало" для всех других вариантов
+                work_name = f"Зеркало {text}"
 
             user_data["mirror_work_base"] = work_name
             await update.message.reply_text("Укажи количество:", reply_markup=mirror_quantity_keyboard())
